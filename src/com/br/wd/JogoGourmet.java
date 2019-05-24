@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class JogoGourmet extends JFrame{
+public class JogoGourmet extends JFrame {
     private JPanel mainPanel;
     private JButton okButton;
     private Flow flow = new Flow();

@@ -14,7 +14,6 @@ public class Flow {
     }
 
     public void start() {
-
         lookFor(root);
     }
 
@@ -31,7 +30,6 @@ public class Flow {
             } else {
                 lookFor(node.getLeft());
             }
-
         } else {
             if (node.rightLastLayer()) {
                 int j = showMessage(node.getRight());
@@ -43,22 +41,20 @@ public class Flow {
             } else {
                 lookFor(node.getRight());
             }
-
         }
     }
 
     private void successMessage() {
-        JOptionPane.showMessageDialog (null,
+        JOptionPane.showMessageDialog(null,
                 "Parece que acertei de novo",
                 "Fim",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
     private int showMessage(Node node) {
-
         return JOptionPane.showConfirmDialog(null,
                 "O prato que você pensou é " + node.getValue() + "?",
-                null,
+                "me diga...",
                 JOptionPane.YES_NO_OPTION);
     }
 
@@ -67,19 +63,14 @@ public class Flow {
                 "Qual prato você pensou?",
                 "Desisto",
                 JOptionPane.QUESTION_MESSAGE);
-
-
         String newNode = JOptionPane.showInputDialog(null,
                 newFood + " é " + "_______" + " e " + node.getValue() + " não é",
                 "Novo",
                 JOptionPane.QUESTION_MESSAGE);
-
         Leaf leaf = new Leaf(newFood);
         Node subs = new Node(newNode);
         subs.setLeft(leaf);
         subs.setRight(node);
         return subs;
     }
-
-
 }
